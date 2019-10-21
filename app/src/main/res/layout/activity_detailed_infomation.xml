@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailedInfomationActivity">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="标题："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            />
+
+        <EditText
+            android:id="@+id/editTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/title2"
+            />
+
+        <TextView
+            android:id="@+id/time2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="时间："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/title2"
+            />
+
+        <EditText
+            android:id="@+id/editTime2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/title2"
+            android:layout_toRightOf="@+id/time2"
+            />
+
+        <TextView
+            android:id="@+id/address2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="地点："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/time2"
+            />
+
+        <EditText
+            android:id="@+id/editAddress2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/time2"
+            android:layout_toRightOf="@+id/address2"
+            />
+
+        <TextView
+            android:id="@+id/Pnumber2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="人数："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/address2"
+            />
+
+        <EditText
+            android:id="@+id/editPnumber2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/address2"
+            android:layout_toRightOf="@+id/Pnumber2"
+            />
+
+        <TextView
+            android:id="@+id/event2"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:text="事件："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/Pnumber2"
+            />
+
+        <EditText
+            android:id="@+id/editEvent2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:maxHeight="150dp"
+            android:gravity="top"
+            android:maxLines="8"
+            android:layout_below="@+id/Pnumber2"
+            android:layout_toRightOf="@+id/event2"
+            />
+
+        <TextView
+            android:id="@+id/reward2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="酬劳："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/event2"
+            />
+
+        <EditText
+            android:id="@+id/editReward2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/event2"
+            android:layout_toRightOf="@+id/reward2"
+            />
+
+        <TextView
+            android:id="@+id/deadline"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="截止时间："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/reward2"
+            />
+
+        <EditText
+            android:id="@+id/editDeadline"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/reward2"
+            android:layout_toRightOf="@+id/deadline"
+            />
+
+        <TextView
+            android:id="@+id/contact2"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="联系方式："
+            android:textColor="#000000"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:layout_below="@+id/deadline"
+            />
+
+        <EditText
+            android:id="@+id/editContact2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/deadline"
+            android:layout_toRightOf="@+id/contact2"
+            />
+
+    <Button
+        android:id="@+id/button_contact"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginBottom="55dp"
+        android:background="#70deeb"
+        android:text="联系发布人"
+        android:textColor="#000000"
+        android:textSize="26dp" />
+
+</RelativeLayout>

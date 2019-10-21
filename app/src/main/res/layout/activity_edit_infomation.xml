@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="标题："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        />
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入你想要发布订单的标题..."
+        android:layout_toRightOf="@+id/title"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="时间："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/title"
+        />
+
+    <EditText
+        android:id="@+id/editTime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入你发布此订单的时间..."
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/time"
+        />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="地点："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/time"
+        />
+
+    <EditText
+        android:id="@+id/editAddress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入此订单的完成地点..."
+        android:layout_below="@+id/time"
+        android:layout_toRightOf="@+id/address"
+        />
+
+    <TextView
+        android:id="@+id/Pnumber"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="人数："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/address"
+        />
+
+    <EditText
+        android:id="@+id/editPnumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入此订单所需要的人数..."
+        android:layout_below="@+id/address"
+        android:layout_toRightOf="@+id/Pnumber"
+        />
+
+    <TextView
+        android:id="@+id/event"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:text="事件："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/Pnumber"
+        />
+
+    <EditText
+        android:id="@+id/editEvent"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="请详细说明需要帮忙的事件内容"
+        android:maxHeight="150dp"
+        android:gravity="top"
+        android:maxLines="8"
+        android:layout_below="@+id/Pnumber"
+        android:layout_toRightOf="@+id/event"
+        />
+
+    <TextView
+        android:id="@+id/aging"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="时效："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/event"
+        />
+
+    <EditText
+        android:id="@+id/editAging"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入此订单的有效时间..."
+        android:layout_below="@+id/event"
+        android:layout_toRightOf="@+id/aging"
+        />
+
+    <TextView
+        android:id="@+id/reward"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="酬劳："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/aging"
+        />
+
+    <EditText
+        android:id="@+id/editReward"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入此订单完成后可以获得的酬劳..."
+        android:layout_below="@+id/aging"
+        android:layout_toRightOf="@+id/reward"
+        />
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="联系方式："
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:layout_below="@+id/reward"
+        />
+
+    <EditText
+        android:id="@+id/editContact"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入您的联系方式..."
+        android:layout_below="@+id/reward"
+        android:layout_toRightOf="@+id/contact"
+        />
+
+    <Button
+        android:id="@+id/button_commit1"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="36dp"
+        android:background="#70deeb"
+        android:text="提交"
+        android:textColor="#000000"
+        android:textSize="26dp" />
+
+</RelativeLayout>
