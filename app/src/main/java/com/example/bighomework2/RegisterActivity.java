@@ -175,7 +175,7 @@ public class RegisterActivity extends Fragment {
                         }
                     }
                 });
-
+//git test
 //                final String responseData = response.body().string();
 //                getActivity().runOnUiThread(new Runnable() {
 //                    @Override
