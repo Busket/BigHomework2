@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -48,14 +49,15 @@ public class UserMessageActivity extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("recover","发送强制下线广播！");
-                Intent intent=new Intent("com.example.BigHomework2.FORCE_OFFLINE");
-                getActivity().sendBroadcast(intent);
+//                Log.i("recover","发送强制下线广播！");
+//                Intent intent=new Intent("com.example.BigHomework2.FORCE_OFFLINE");
+//                getActivity().sendBroadcast(intent);
 
                 //将SharePreferences中的数据清除
                 SharedPreferences.Editor editor = getActivity().getSharedPreferences("logindata", MODE_PRIVATE).edit();
                 editor.clear();//删除文件中的数据，注意，也要执行apply或commit方法
-//                          Log.d("login","清除了文件中的账号信息");
+                Log.d("login","清除了文件中的账号信息");
+                Toast.makeText(getContext(),"下线成功！请切换页面",Toast.LENGTH_LONG).show();
             }
         });
     }
