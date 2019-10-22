@@ -84,9 +84,14 @@ public class MineActivity extends Fragment implements View.OnClickListener{
             args.putSerializable("user", user);//ARG_ARTICLE
             userMessageActivity.setArguments(args);
 
-            FragmentManager fm =getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            ft.add(R.id.mine_layout,fragmentList.get(2));
+            //获取Fragment的管理器
+            FragmentManager fragmentManager=getFragmentManager();
+            //开启fragment的事物,在这个对象里进行fragment的增删替换等操作。
+            FragmentTransaction ft=fragmentManager.beginTransaction();
+            //ft.hide(new LoginActivity());
+            //跳转到fragment，第一个参数为所要替换的位置id，第二个参数是替换后的fragment
+            ft.replace(R.id.mine_layout,userMessageActivity);
+            //提交事物
             ft.commit();
         }else{
             FragmentManager fm =getFragmentManager();

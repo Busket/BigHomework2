@@ -48,9 +48,11 @@ import okhttp3.Response;
 import static android.content.Context.MODE_PRIVATE;
 
 public class RegisterActivity extends Fragment {
+    EditText editText4;//昵称
     EditText editText;//账号
     EditText editText2;//密码
     EditText editText3;//确认密码
+
     Button registerbutton;
     ImageView imageView;//头像
     String ACnumber;//账号，用于检查
@@ -69,6 +71,7 @@ public class RegisterActivity extends Fragment {
         editText=(EditText)view.findViewById(R.id.editText);//账号
         editText2=(EditText)view.findViewById(R.id.editText2);//密码
         editText3=(EditText)view.findViewById(R.id.editText3);//确认密码
+        editText4=(EditText)view.findViewById(R.id.username);//确认密码
         registerbutton=(Button)view.findViewById(R.id.registerbutton);//注册按钮
         imageView=(ImageView)view.findViewById(R.id.imageView);
         imageView.setImageResource(R.mipmap.huaji);
@@ -83,7 +86,8 @@ public class RegisterActivity extends Fragment {
                         String registerAddress = "http://192.168.43.142:4399/Register";
                         String registerAccount = editText.getText().toString();
                         String registerPassword = editText2.getText().toString();
-                        registerWithOkHttp(registerAddress, registerAccount, registerPassword);
+                        String registerName=editText4.getText().toString();
+                        registerWithOkHttp(registerAddress, registerAccount, registerPassword, registerName);
                     }else{
                         Toast.makeText(getContext(), "两次密码不相同！", Toast.LENGTH_SHORT).show();
                         editText2.setText(null);
@@ -116,8 +120,8 @@ public class RegisterActivity extends Fragment {
 
 
     //实现注册
-    public void registerWithOkHttp(String address,String account,String password) {
-        HttpUtil.registerWithOkHttp(address, account, password, new Callback() {
+    public void registerWithOkHttp(String address,String account,String password,String username) {
+        HttpUtil.registerWithOkHttp(address, account, password,username, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 //在这里对异常情况进行处理
@@ -136,6 +140,7 @@ public class RegisterActivity extends Fragment {
                     register.state=state;
                     String registerAccount = object.getString("registerAccount");
                     register.registerAccount=registerAccount;
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -220,8 +225,4 @@ public class RegisterActivity extends Fragment {
 //            }
 //        }
 //    };
-}
-class Register implements Serializable{
-    String state;
-    String registerAccount;
 }

@@ -82,7 +82,7 @@ public class LoginActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(),"单击了登录！",Toast.LENGTH_LONG).show();
-                String loginAddress="http://192.168.43.142:4399/Login";//在这附上相应的类链接
+                String loginAddress="http://192.168.43.142:4399/gcuhelper_Web_exploded/UserLoginAction";//在这附上相应的类链接
                 String loginAccount = loginAccount_etext.getText().toString();
                 String loginPassword = loginPassword_etext.getText().toString();
                 loginWithOkHttp(loginAddress,loginAccount,loginPassword);
@@ -225,7 +225,7 @@ public class LoginActivity extends Fragment {
 
                             //获取可以访问datasf1.xml文件的SharedPreferences对象的Editor对象，
                             //通过该Editor对象可以修改文件中的值
-                            SharedPreferences.Editor editor = getActivity().getSharedPreferences("logindata", MODE_PRIVATE).edit();
+                            SharedPreferences.Editor editor = getContext().getSharedPreferences("logindata", MODE_PRIVATE).edit();
                             //在Editor中设置键值对，第一个参数为键，第二个为值，
                             // 这些值通过调用editor的apply（）或commit（）方法被写入文件中
 
@@ -234,7 +234,7 @@ public class LoginActivity extends Fragment {
                             editor.putString("password", user.Password);
                             editor.putString("name", user.Name);
                             editor.putInt("credibility", user.Credibility);
-
+                            editor.apply();//把editor的修改更新到文件
                             Log.d("login","登录的用户信息已写入");
 
 //                          } else {
@@ -242,7 +242,7 @@ public class LoginActivity extends Fragment {
 //                          editor.clear();//删除文件中的数据，注意，也要执行apply或commit方法
 //                          Log.d("login","清除了文件中的账号信息");
 //                          }
-//                          editor.apply();//把editor的修改更新到文件
+
 
 //                            Intent intent = new Intent(getContext(), UserMessageActivity.class);
 //                            intent.putExtra("user",user);
@@ -255,7 +255,7 @@ public class LoginActivity extends Fragment {
 //
 //                            fragment.setArguments(args);
 
-                        //获取fragment的实例
+                            //获取fragment的实例
                             UserMessageActivity userMessageActivity=new UserMessageActivity();
                             //测试：将User传递过去
                             Bundle args = new Bundle();

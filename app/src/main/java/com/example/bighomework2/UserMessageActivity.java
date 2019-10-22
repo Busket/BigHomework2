@@ -32,7 +32,12 @@ public class UserMessageActivity extends Fragment {
 
     private void initView(View view){
         //接收User
-        user=(User)getArguments().getSerializable("user");
+        try {
+            user=(User)getArguments().getSerializable("user");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         //声明组件
         button=(Button)view.findViewById(R.id.logout);
         name=(TextView) view.findViewById(R.id.username);
@@ -54,8 +59,9 @@ public class UserMessageActivity extends Fragment {
 //                getActivity().sendBroadcast(intent);
 
                 //将SharePreferences中的数据清除
-                SharedPreferences.Editor editor = getActivity().getSharedPreferences("logindata", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getContext().getSharedPreferences("logindata", MODE_PRIVATE).edit();
                 editor.clear();//删除文件中的数据，注意，也要执行apply或commit方法
+                editor.commit();
                 Log.d("login","清除了文件中的账号信息");
                 Toast.makeText(getContext(),"下线成功！请切换页面",Toast.LENGTH_LONG).show();
             }

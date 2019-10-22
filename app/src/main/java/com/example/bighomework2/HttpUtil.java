@@ -69,7 +69,7 @@ public class HttpUtil {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                MediaType type = MediaType.parse("application/json;charset=utf-8");
+//                MediaType type = MediaType.parse("application/json;charset=utf-8");
                 RequestBody body = new FormBody.Builder()
                 .add("obj",""+obj.toString())
                .build();
@@ -103,7 +103,7 @@ public class HttpUtil {
 //        client.newCall(request).enqueue(callback);
     }
     //注册
-    static void registerWithOkHttp(final String address, final String account, final String password, final okhttp3.Callback callback){
+    static void registerWithOkHttp(final String address, final String account, final String password,final String username, final okhttp3.Callback callback){
 
         new Thread(new Runnable() {
             @Override
@@ -112,6 +112,7 @@ public class HttpUtil {
                 try {
                     obj.put("registerAccount",account);
                     obj.put("registerPassword",password);
+                    obj.put("registerName",username);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
